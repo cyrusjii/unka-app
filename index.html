@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unka Chat Rooms</title>
+  <link rel="manifest" href="manifest.json">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-[#f9f9ff] text-[#111118]">
+  <div class="flex flex-col h-screen max-w-md mx-auto bg-white shadow-xl relative overflow-hidden">
+    <header class="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-white sticky top-0 z-10">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-[#630ed4] rounded-full flex items-center justify-center text-white">
+          <span class="material-symbols-outlined">forum</span>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold text-gray-900 leading-tight">Unka Chat</h1>
+          <p class="text-xs text-green-500 font-medium flex items-center gap-1">
+            <span class="w-1.5 h-1.5 bg-green-500 rounded-full inline-block"></span> Active Hub
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 overflow-y-auto p-4 space-y-4 pb-24">
+      <div class="bg-gradient-to-r edit-gradient from-[#630ed4]/10 to-[#630ed4]/5 p-4 rounded-2xl mb-2">
+        <h2 class="font-bold text-[#630ed4] text-base">Welcome to Unka Rooms! 👋</h2>
+        <p class="text-xs text-gray-600 mt-1">Join active public channels, share thoughts, and build vibrant connections instantly.</p>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider pl-1">Active Chat Rooms</h3>
+        
+        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-100 hover:border-[#630ed4]/30 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center text-[#630ed4] font-bold text-sm">#GP</div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-800">General Public</h4>
+              <p class="text-xs text-gray-500">Open discussion for everyone</p>
+            </div>
+          </div>
+          <button class="px-3 py-1.5 bg-[#630ed4] text-white text-xs font-semibold rounded-lg hover:bg-[#520bc2]">Join</button>
+        </div>
+
+        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-100 hover:border-[#630ed4]/30 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 font-bold text-sm">#CH</div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-800">Cyrus Heyzi Hub</h4>
+              <p class="text-xs text-gray-500">Creators & Creators community</p>
+            </div>
+          </div>
+          <button class="px-3 py-1.5 bg-[#630ed4] text-white text-xs font-semibold rounded-lg hover:bg-[#520bc2]">Join</button>
+        </div>
+      </div>
+    </main>
+
+    <nav class="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-gray-100 px-6 py-2 flex justify-around items-center z-10">
+      <button class="flex flex-col items-center text-[#630ed4]">
+        <span class="material-symbols-outlined">explore</span>
+        <span class="text-[10px] font-medium mt-0.5">Explore</span>
+      </button>
+      <button class="flex flex-col items-center text-gray-400 hover:text-[#630ed4]">
+        <span class="material-symbols-outlined">chat_bubble</span>
+        <span class="text-[10px] font-medium mt-0.5">My Chats</span>
+      </button>
+      <button class="flex flex-col items-center text-gray-400 hover:text-[#630ed4]">
+        <span class="material-symbols-outlined">person</span>
+        <span class="text-[10px] font-medium mt-0.5">Profile</span>
+      </button>
+    </nav>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('Service Worker Registered'))
+          .catch(err => console.log('Service Worker Failed', err));
+      });
+    }
+  </script>
+</body>
+</html>
