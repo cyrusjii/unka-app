@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unka | Chat Rooms</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#4a4455",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f9f9ff",
+                        "surface-container": "#e7eefe",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#464555",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e4e0f5",
+                        "surface-variant": "#dce2f3",
+                        "on-tertiary-fixed": "#3d0026",
+                        "error-container": "#ffdad6",
+                        "on-background": "#151c27",
+                        "background": "#f9f9ff",
+                        "outline-variant": "#ccc3d8",
+                        "primary": "#630ed4",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#d2bbff",
+                        "on-secondary-fixed": "#1b1a29",
+                        "on-primary-fixed": "#25005a",
+                        "inverse-on-surface": "#ebf1ff",
+                        "primary-fixed-dim": "#d2bbff",
+                        "surface-bright": "#f9f9ff",
+                        "on-primary-container": "#ede0ff",
+                        "outline": "#7b7487",
+                        "on-tertiary-container": "#ffdce9",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "tertiary-container": "#ae397b",
+                        "surface-tint": "#732ee4",
+                        "primary-container": "#7c3aed",
+                        "tertiary-fixed": "#ffd8e7",
+                        "secondary-fixed": "#e4e0f5",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#eaddff",
+                        "inverse-surface": "#2a313d",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#dce2f3",
+                        "surface-container-low": "#f0f3ff",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d3daea",
+                        "tertiary": "#8f1e62",
+                        "tertiary-fixed-dim": "#ffafd3",
+                        "on-secondary-container": "#646274",
+                        "secondary": "#5e5c6e",
+                        "secondary-fixed-dim": "#c7c4d8",
+                        "on-tertiary-fixed-variant": "#85145a",
+                        "surface-container-high": "#e2e8f8",
+                        "on-surface": "#151c27"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "lg": "24px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "max-width-feed": "680px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "gutter": "16px",
+                        "margin-desktop": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top AppBar (from JSON) -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-on-background shadow-sm h-16">
+<div class="flex items-center justify-between px-md h-full w-full max-w-max-width-feed mx-auto">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed active:scale-95 transition-transform" data-icon="menu">menu</button>
+<h1 class="font-display-lg text-headline-lg-mobile font-extrabold text-primary dark:text-primary-fixed">Unka</h1>
+</div>
+<div class="flex items-center">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed active:scale-95 transition-transform p-2 hover:bg-surface-container-low transition-colors rounded-full" data-icon="search">search</button>
+</div>
+</div>
+</header>
+<main class="max-w-max-width-feed mx-auto px-md pt-lg">
+<!-- Search & Filter Area -->
+<div class="mb-lg">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary focus:bg-surface transition-all font-body-md text-on-surface" placeholder="Search active rooms..." type="text"/>
+</div>
+<div class="flex gap-sm mt-md overflow-x-auto pb-2 scrollbar-hide">
+<button class="bg-primary text-on-primary px-lg py-2 rounded-full font-label-md whitespace-nowrap">All Rooms</button>
+<button class="bg-surface-container-high text-on-surface-variant px-lg py-2 rounded-full font-label-md whitespace-nowrap hover:bg-surface-variant transition-colors">Gaming</button>
+<button class="bg-surface-container-high text-on-surface-variant px-lg py-2 rounded-full font-label-md whitespace-nowrap hover:bg-surface-variant transition-colors">Music</button>
+<button class="bg-surface-container-high text-on-surface-variant px-lg py-2 rounded-full font-label-md whitespace-nowrap hover:bg-surface-variant transition-colors">Tech</button>
+<button class="bg-surface-container-high text-on-surface-variant px-lg py-2 rounded-full font-label-md whitespace-nowrap hover:bg-surface-variant transition-colors">Art</button>
+</div>
+</div>
+<!-- Featured Section (Asymmetric / Bento-ish) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
+<div class="relative group h-64 rounded-xl overflow-hidden shadow-lg border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A futuristic gaming room with neon purple and blue ambient lighting. High-end PC setups with glowing keyboards are visible in a sleek, modern apartment setting. The mood is high-energy and competitive, perfectly aligned with a vibrant social ecosystem palette of deep purples and bright accents. The lighting is low-key with sharp, colorful glows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0hbKf5iXEFj7AmD5EFclzELq0O4KBE1uo0xRsiZ3qQMp4d-5qhm2GCTAZZXbxx5oMuWdwoNtIrtbp1IgyzBW705igj9pd9GSJ1R1Cqbek-mm1-b72zfCtq8wLVQZP-fByk6hkxOf3N1CgFaSRQyk4Z2xK0jXJli0SJ0V8lM9hiqKa0jGarAYdJeGR9L1I4lQgZHuXTMVasVsnTQhzA6Fi7rZnRMYJrylRlLKdFqYeI96BtRmiKZ72IqBXTsFOUBFjEWRgbkwwV0KP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-lg">
+<div class="flex items-center gap-xs mb-xs">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="text-white font-label-sm uppercase tracking-wider">Live Now</span>
+</div>
+<h2 class="text-white font-title-md text-title-md mb-2">Weekly Tournament Hub</h2>
+<p class="text-white/80 font-label-sm mb-lg">2.4k members active</p>
+<button class="bg-primary-container text-on-primary-container px-lg py-3 rounded-lg font-label-md self-start hover:opacity-90 active:scale-95 transition-all">Join Live</button>
+</div>
+</div>
+<div class="flex flex-col gap-md">
+<div class="bg-tertiary-container/10 border border-tertiary-container/20 p-lg rounded-xl flex items-center justify-between">
+<div>
+<h3 class="font-title-md text-tertiary">Music &amp; Lo-Fi</h3>
+<p class="text-on-surface-variant font-label-sm">432 listening together</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="music_note">music_note</span>
+</div>
+<div class="bg-secondary-container/30 border border-secondary-container/40 p-lg rounded-xl flex items-center justify-between">
+<div>
+<h3 class="font-title-md text-secondary">Tech Enthusiasts</h3>
+<p class="text-on-surface-variant font-label-sm">1.1k discussing</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="developer_mode">developer_mode</span>
+</div>
+</div>
+</div>
+<!-- Room List Section -->
+<h3 class="font-title-md text-on-surface mb-md px-base">Active Rooms</h3>
+<div class="space-y-md">
+<!-- Room Item 1 -->
+<div class="glass-card p-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="videogame_asset">videogame_asset</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface group-hover:text-primary transition-colors">Valorant Scrims [Global]</h4>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="group">group</span>
+<span class="text-on-surface-variant font-label-sm">84 participants</span>
+</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-lg py-2 rounded-full font-label-md hover:bg-primary-container active:scale-90 transition-all">Join</button>
+</div>
+<!-- Room Item 2 -->
+<div class="glass-card p-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="palette">palette</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface group-hover:text-primary transition-colors">UI/UX Design Critique</h4>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="group">group</span>
+<span class="text-on-surface-variant font-label-sm">21 participants</span>
+</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-lg py-2 rounded-full font-label-md hover:bg-primary-container active:scale-90 transition-all">Join</button>
+</div>
+<!-- Room Item 3 -->
+<div class="glass-card p-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="theater_comedy">theater_comedy</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface group-hover:text-primary transition-colors">Evening Comedy Open-Mic</h4>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="group">group</span>
+<span class="text-on-surface-variant font-label-sm">156 participants</span>
+</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-lg py-2 rounded-full font-label-md hover:bg-primary-container active:scale-90 transition-all">Join</button>
+</div>
+<!-- Room Item 4 -->
+<div class="glass-card p-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="lock">lock</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface group-hover:text-primary transition-colors">Private: Project Unka Team</h4>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="group">group</span>
+<span class="text-on-surface-variant font-label-sm">6 participants</span>
+</div>
+</div>
+</div>
+<button class="bg-surface-container-high text-on-surface-variant px-lg py-2 rounded-full font-label-md hover:bg-surface-variant active:scale-90 transition-all">Request</button>
+</div>
+<!-- Room Item 5 -->
+<div class="glass-card p-md rounded-xl shadow-sm border border-outline-variant/30 flex items-center justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="sports_esports">sports_esports</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface group-hover:text-primary transition-colors">RPG Lore &amp; Worldbuilding</h4>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="group">group</span>
+<span class="text-on-surface-variant font-label-sm">2.1k active</span>
+</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-lg py-2 rounded-full font-label-md hover:bg-primary-container active:scale-90 transition-all">Join</button>
+</div>
+</div>
+</main>
+<!-- Create Room FAB -->
+<button class="fixed bottom-24 right-6 w-16 h-16 bg-primary-container text-on-primary-container rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<!-- Bottom Navigation Bar (from JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest dark:bg-inverse-surface shadow-[0_-1px_3px_0_rgba(0,0,0,0.1)] py-sm px-md border-t border-outline-variant/20 flex justify-around items-center h-20">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-primary-container text-primary dark:text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="forum">forum</span>
+<span class="font-label-sm text-label-sm">Rooms</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="notifications">notifications</span>
+<span class="font-label-sm text-label-sm">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the FAB
+        const fab = document.querySelector('button.fixed.right-6');
+        fab.addEventListener('click', () => {
+            fab.classList.add('rotate-90');
+            setTimeout(() => fab.classList.remove('rotate-90'), 300);
+        });
+
+        // Search bar interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            console.log('Searching for vibrant connections...');
+        });
+    </script>
+</body></html>
